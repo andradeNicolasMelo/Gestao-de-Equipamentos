@@ -1,12 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Gestao_de_Equipamentos.ConsoleApp1
+﻿namespace Gestao_de_Equipamentos.ConsoleApp1
 {
-    internal class Repositorio
+    public class Repositorio
     {
+        Equipamentos[] historicoDeRegistros = new Equipamentos[101];
+        public int indiceHistorico = 0;
+        public int id = 0;
+
+        public void CadastrarEquipamento(Equipamentos dadosObtidos)
+        {
+            dadosObtidos.id = indiceHistorico;
+            historicoDeRegistros[indiceHistorico] = dadosObtidos;
+
+            indiceHistorico++;
+            id++;
+        }
     }
 }
