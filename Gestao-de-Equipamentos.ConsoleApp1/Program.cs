@@ -1,4 +1,5 @@
-﻿using Gestao_de_Equipamentos.ConsoleApp1.ModuloEquipamento;
+﻿using Gestao_de_Equipamentos.ConsoleApp1.ModuloChamado;
+using Gestao_de_Equipamentos.ConsoleApp1.ModuloEquipamento;
 
 namespace Gestao_de_Equipamentos.ConsoleApp1
 {
@@ -6,7 +7,8 @@ namespace Gestao_de_Equipamentos.ConsoleApp1
     {
         static void Main(string[] args)
         {
-            TelaEquipamento telaUsuario = new TelaEquipamento();
+            TelaEquipamento telaEquipamento = new TelaEquipamento();
+            TelaChamado telaChamado = new TelaChamado();
             Repositorio repositorio = new Repositorio();
             while (true)
             {
@@ -15,32 +17,49 @@ namespace Gestao_de_Equipamentos.ConsoleApp1
 
                 if (telaEscolhida == '1')
                 {
-                    telaUsuario.Cabecalho();
-                    telaUsuario.ExibirOpcoes();
+                    telaEquipamento.Cabecalho();
+                    telaEquipamento.ExibirOpcoes();
 
-                    switch (telaUsuario.ObterOpcaoUsuario())
+                    switch (telaEquipamento.ObterOpcaoUsuario())
                     {
                         case '1':
-                            telaUsuario.Registrar();
+                            telaEquipamento.Registrar();
                             break;
 
                         case '2':
-                            telaUsuario.Visualizar();
+                            telaEquipamento.Visualizar();
                             break;
 
                         case '3':
-                            telaUsuario.Editar();
+                            telaEquipamento.Editar();
                             break;
 
                         case '4':
-                            telaUsuario.Excluir();
+                            telaEquipamento.Excluir();
                             break;
                     }
                 }
 
                 else if(telaEscolhida == '2')
                 {
+                    switch (telaEquipamento.ObterOpcaoUsuario())
+                    {
+                        case '1':
+                            telaChamado.Registrar();
+                            break;
 
+                        case '2':
+                            telaChamado.Visualizar();
+                            break;
+
+                        case '3':
+                            telaChamado.Editar();
+                            break;
+
+                        case '4':
+                            telaChamado.ExcluirChamado();
+                            break;
+                    }
                 }
             }
         }
