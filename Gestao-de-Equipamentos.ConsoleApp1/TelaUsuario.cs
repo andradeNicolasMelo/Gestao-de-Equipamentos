@@ -18,6 +18,7 @@ namespace Gestao_de_Equipamentos.ConsoleApp1
             Console.WriteLine("1 - Registrar item");
             Console.WriteLine("2 - Visualizar itens");
             Console.WriteLine("3 - Editar itens");
+            Console.WriteLine("4 - Excluir itens");
         }
 
         public char ObterOpcaoUsuario()
@@ -87,7 +88,7 @@ namespace Gestao_de_Equipamentos.ConsoleApp1
             return equipamento;
         }
 
-        internal void Editar()
+        public void Editar()
         {
             Cabecalho();
 
@@ -102,6 +103,20 @@ namespace Gestao_de_Equipamentos.ConsoleApp1
             int idParaEdicao = Convert.ToInt32(Console.ReadLine()!);
 
             repositorio.EditarRegistro(idParaEdicao);
+        }
+
+        public void Excluir()
+        {
+            Cabecalho();
+
+            Console.WriteLine("Exclusão de Equipamento");
+
+            Console.WriteLine();
+
+            Console.Write("Digite o ID para excluir: ");
+            int idParaExclusao = Convert.ToInt32(Console.ReadLine()!);
+
+            repositorio.ExcluirRegistro(idParaExclusao);
         }
     }
 }

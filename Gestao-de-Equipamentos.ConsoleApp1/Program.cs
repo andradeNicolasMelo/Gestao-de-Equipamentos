@@ -24,6 +24,10 @@
                     case '3':
                         telaUsuario.Editar();
                         break;
+
+                    case '4':
+                        telaUsuario.Excluir();
+                        break;
                 }
             }
         }

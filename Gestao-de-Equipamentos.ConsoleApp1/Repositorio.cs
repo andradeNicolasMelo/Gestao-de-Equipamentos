@@ -50,5 +50,22 @@
                 }
             }
         }
+
+        public void ExcluirRegistro(int idParaExclusao)
+        {
+            for(int i = 0; i < historicoDeRegistros.Length; i++)
+            {
+                Equipamentos e = historicoDeRegistros[i];
+                if (e == null)
+                    continue;
+                if (idParaExclusao == e.id)
+                {
+                    historicoDeRegistros[i] = null;
+                    Console.WriteLine("Equipamento excluído com sucesso!");
+                    Console.ReadLine();
+                    return;
+                }
+            }
+        }
     }
 }
