@@ -16,6 +16,7 @@ namespace Gestao_de_Equipamentos.ConsoleApp1
         public void ExibirOpcoes()
         {
             Console.WriteLine("1 - Registrar item");
+            Console.WriteLine("2 - Visualizar itens");
         }
 
         public char ObterOpcaoUsuario()
@@ -37,6 +38,21 @@ namespace Gestao_de_Equipamentos.ConsoleApp1
             repositorio.CadastrarEquipamento(equipamento);
         }
 
+        public void Visualizar()
+        {
+            Cabecalho();
+
+            Console.WriteLine("Visualização dos cadastros dos equipamentos");
+
+            Console.WriteLine();
+
+            Console.WriteLine(
+                "{0, -3} | {1, -20} | {2, -15} | {3, -15} | {4, -20} | {5, -15}",
+                "Id", "Nome", "Preço Aquisição", "Numero de série", "Fabricante", "Data de Fabricação"
+            );
+
+            repositorio.VisualizarEquipamentos();
+        }
         public Equipamentos ObterDados()
         {
             Console.Write("Digite o nome do equipamento: ");
@@ -68,6 +84,6 @@ namespace Gestao_de_Equipamentos.ConsoleApp1
             equipamento.dataFabricacao = dataFabricacao;
 
             return equipamento;
-        } 
+        }
     }
 }

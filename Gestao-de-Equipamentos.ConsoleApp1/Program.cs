@@ -4,11 +4,10 @@
     {
         static void Main(string[] args)
         {
+            TelaUsuario telaUsuario = new TelaUsuario();
+            Repositorio repositorio = new Repositorio();
             while (true)
             {
-                TelaUsuario telaUsuario = new TelaUsuario();
-                Repositorio repositorio = new Repositorio();
-
                 telaUsuario.Cabecalho();
                 telaUsuario.ExibirOpcoes();
 
@@ -16,6 +15,10 @@
                 {
                     case '1':
                         telaUsuario.Registrar();
+                        break;
+                    
+                    case '2':
+                        telaUsuario.Visualizar();
                         break;
                 }
             }
