@@ -20,6 +20,10 @@
                     case '2':
                         telaUsuario.Visualizar();
                         break;
+
+                    case '3':
+                        telaUsuario.Editar();
+                        break;
                 }
             }
         }

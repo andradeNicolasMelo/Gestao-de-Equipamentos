@@ -33,5 +33,22 @@
             }
             Console.ReadLine();
         }
+
+        public void EditarRegistro(int novoRegistro)
+        {
+            for (int i = 0; i < historicoDeRegistros.Length; i++)
+            {
+                TelaUsuario telaUsuario = new TelaUsuario();
+                Equipamentos e = historicoDeRegistros[i];
+
+                if (e == null)
+                    continue;
+
+                if(novoRegistro == e.id)
+                {
+                    historicoDeRegistros[i] = telaUsuario.ObterDados();
+                }
+            }
+        }
     }
 }

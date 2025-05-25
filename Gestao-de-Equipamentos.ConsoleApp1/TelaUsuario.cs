@@ -17,6 +17,7 @@ namespace Gestao_de_Equipamentos.ConsoleApp1
         {
             Console.WriteLine("1 - Registrar item");
             Console.WriteLine("2 - Visualizar itens");
+            Console.WriteLine("3 - Editar itens");
         }
 
         public char ObterOpcaoUsuario()
@@ -84,6 +85,23 @@ namespace Gestao_de_Equipamentos.ConsoleApp1
             equipamento.dataFabricacao = dataFabricacao;
 
             return equipamento;
+        }
+
+        internal void Editar()
+        {
+            Cabecalho();
+
+            Console.WriteLine("Edição de Equipamento");
+
+            Console.WriteLine();
+
+            repositorio.VisualizarEquipamentos();
+            Console.WriteLine("-----------------------");
+            Console.WriteLine();
+            Console.Write("Digite o id do equipamento que deseja editar: ");
+            int idParaEdicao = Convert.ToInt32(Console.ReadLine()!);
+
+            repositorio.EditarRegistro(idParaEdicao);
         }
     }
 }
