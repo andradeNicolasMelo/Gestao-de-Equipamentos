@@ -1,7 +1,6 @@
-﻿
-namespace Gestao_de_Equipamentos.ConsoleApp1
+﻿namespace Gestao_de_Equipamentos.ConsoleApp1.ModuloEquipamento
 {
-    public class TelaUsuario
+    public class TelaEquipamento
     {
         Repositorio repositorio = new Repositorio();
 

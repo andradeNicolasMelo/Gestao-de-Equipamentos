@@ -1,4 +1,4 @@
-﻿namespace Gestao_de_Equipamentos.ConsoleApp1
+﻿namespace Gestao_de_Equipamentos.ConsoleApp1.ModuloEquipamento
 {
     public class Repositorio
     {
@@ -38,7 +38,7 @@
         {
             for (int i = 0; i < historicoDeRegistros.Length; i++)
             {
-                TelaUsuario telaUsuario = new TelaUsuario();
+                TelaEquipamento telaUsuario = new TelaEquipamento();
                 Equipamentos e = historicoDeRegistros[i];
 
                 if (e == null)
